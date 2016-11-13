@@ -7,6 +7,7 @@
 -------------------------------------------------------------------------*/// no direct access
 defined('_JEXEC') or die;
 JHtml::_('bootstrap.framework');
+if(file_exists('../css/custom.css') $doc->addStylesheetVersion($tpath.'/css/custom.css');
 $doc->addCustomTag('<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />');
 $doc->addCustomTag('<link rel="apple-touch-icon-precomposed" href="'.$tpath.'/images/apple-touch-icon-57x57-precomposed.png">');
 $doc->addCustomTag('<link rel="apple-touch-icon-precomposed" sizes="72x72" href="'.$tpath.'/images/apple-touch-icon-72x72-precomposed.png">');
