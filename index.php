@@ -8,29 +8,28 @@
 defined('_JEXEC') or die;
 
 include 'includes/params.php';
+include 'includes/head.php';
+
 $app = JFactory::getApplication();
+$doc = JFactory::getDocument();
 
 if ($params->get('compile_sass', '0') === '1')
 {
 	require_once "includes/sass.php";
 }
-
+if($layout=='boxed') {
+$pattern = JURI::base().'templates/'.$this->template."/images/elements/pattern".$pattern.".png";
+$doc->addStyleDeclaration('body {
+    background: url("'.$pattern.'") repeat fixed center top rgba(0, 0, 0, 0);
+ }');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
  include 'includes/head.php'; ?>
 <body>
-<?php
- if($layout=='boxed'){ ?>
-<?php  $path= JURI::base().'templates/'.$this->template."/images/elements/pattern".$pattern.".png"; ?>
-<style type="text/css">
- body {
-    background: url("<?php  echo $path ; ?>") repeat fixed center top rgba(0, 0, 0, 0);
- }
-</style>
-<div class="layout-boxed">
-  <?php  } ?>
+<?php if($layout=='boxed') echo '<div class="layout-boxed">'; ?>
 <div id="wrap">
 <!--Navigation-->
 <header id="header" class="header header--fixed hide-from-print" role="banner">
