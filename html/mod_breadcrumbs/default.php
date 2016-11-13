@@ -9,11 +9,12 @@
 defined('_JEXEC') or die;
 ?>
 <div class = "breadcrumb<?php echo $moduleclass_sfx; ?>">
+	<ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
 <?php if ($params->get('showHere', 1))
 	{
 		echo '<span class="showHere">' .JText::_('MOD_BREADCRUMBS_HERE').'</span>';
 	}
-
+	
 	// Get rid of duplicated entries on trail including home page when using multilanguage
 	for ($i = 0; $i < $count; $i++)
 	{
@@ -32,28 +33,27 @@ defined('_JEXEC') or die;
 	foreach ($list as $key => $item) :
 	// Make a link if not the last item in the breadcrumbs
 	$show_last = $params->get('showLast', 1);
+	
+	echo '<li property="itemListElement" typeof="ListItem">';
 	if ($key != $last_item_key)
 	{
 		// Render all but last item - along with separator
 		if (!empty($item->link))
 		{
-			echo '<a href="' . $item->link . '" class="pathway">' . $item->name . '</a>';
+			echo '<a href="' . $item->link . '" property="item" typeof="WebPage"><span property="name">' . $item->name . '</span></a>';
 		}
 		else
 		{
-			echo '<span>' . $item->name . '</span>';
+			echo '<span property="name">' . $item->name . '</span>';
 		}
-
-		if (($key != $penult_item_key) || $show_last)
-		{
-			echo ' '.$separator.' ';
-		}
-
 	}
 	elseif ($show_last)
 	{
 		// Render last item if reqd.
-		echo '<span>' . $item->name . '</span>';
+		echo '<span itemprop="name">' . $item->name . '</span>';
 	}
+	echo '<meta property="position" content="'.($key+1).'" />';
+	echo '</li>';
 	endforeach; ?>
+	</ol>
 </div>
