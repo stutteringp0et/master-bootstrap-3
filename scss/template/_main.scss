@@ -437,7 +437,7 @@ body #overall {
     overflow: hidden;
 }
 /*MATERIAL DESIGN*/
-@import url(//fonts.gstatic.com/s/materialicons/v12/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2);
+@import url(//fonts.gstatic.com/s/materialicons/v12/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
 $materialicons: 'Material Icons';
 @font-face {
   font-family: $materialicons;
