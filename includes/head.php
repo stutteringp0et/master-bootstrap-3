@@ -18,5 +18,5 @@ $ietag[] = '<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5s
 if ($pie == 1) {
 	$ietag[]='<style>{behavior:url('.$tpath.'/js/PIE.htc);}</style>';
 }
-$ietag[] = '<!--[endif]>';
+$ietag[] = '<![endif]-->';
 $doc->addCustomTag(implode("\n",$ietag));
