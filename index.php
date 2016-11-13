@@ -8,6 +8,7 @@
 defined('_JEXEC') or die;
 
 include 'includes/params.php';
+$app = JFactory::getApplication();
 
 if ($params->get('compile_sass', '0') === '1')
 {
@@ -57,6 +58,7 @@ if ($params->get('compile_sass', '0') === '1')
                 <div id="brand">
                                 <a href="<?php  echo $this->params->get('logo_link')   ?>">
                                          <img style="width:<?php $w = $this->params->get('logo_width');  echo is_numeric($w)?$w.'px':$w; ?>; height:<?php $h = $this->params->get('logo_height'); echo is_numeric($h)?$h.'px':$h; ?>;" src="<?php  echo $this->params->get('logo_file')   ?>" alt="Logo" />
+					<h1><span><?php echo implode('</span><span>',explode(' ',$app->get('sitename')));?></span></h1>
                                         </a>
                         </div>
 </div>
