@@ -13,9 +13,10 @@ $doc->addCustomTag('<link rel="apple-touch-icon-precomposed" href="'.$tpath.'/im
 $doc->addCustomTag('<link rel="apple-touch-icon-precomposed" sizes="72x72" href="'.$tpath.'/images/apple-touch-icon-72x72-precomposed.png">');
 $doc->addCustomTag('<link rel="apple-touch-icon-precomposed" sizes="114x114" href="'.$tpath.'/images/apple-touch-icon-114x114-precomposed.png">');
 $doc->addCustomTag('<link rel="apple-touch-icon-precomposed" sizes="144x144" href="'.$tpath.'/images/apple-touch-icon-144x144-precomposed.png">');
-$doc->addCustomTag('<!--[if lte IE 8]>');
-$doc->addCustomTag('<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>');
+$ietag = array('<!--[if lte IE 8]>');
+$ietag[] = '<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>';
 if ($pie == 1) {
-	$doc->addStyleDeclaration('{behavior:url('.$tpath.'/js/PIE.htc);}');
+	$ietag[]='<style>{behavior:url('.$tpath.'/js/PIE.htc);}</style>';
 }
-$doc->addCustomTag('<!--[endif]>');
+$ietag[] = '<!--[endif]>';
+$doc->addCustomTag(implode("\n",$ietag));
