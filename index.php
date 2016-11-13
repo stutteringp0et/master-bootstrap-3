@@ -26,8 +26,9 @@ $doc->addStyleDeclaration('body {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php
- include 'includes/head.php'; ?>
+<head>
+	<jdoc:include type="head" />
+</head>
 <body>
 <?php if($layout=='boxed') echo '<div class="layout-boxed">'; ?>
 <div id="wrap">
