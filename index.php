@@ -56,7 +56,7 @@ if ($params->get('compile_sass', '0') === '1')
 </button>
                 <div id="brand">
                                 <a href="<?php  echo $this->params->get('logo_link')   ?>">
-                                         <img style="width:<?php  echo $this->params->get('logo_width')   ?>px; height:<?php  echo $this->params->get('logo_height')   ?>px; " src="<?php  echo $this->params->get('logo_file')   ?>" alt="Logo" />
+                                         <img style="width:<?php $w = $this->params->get('logo_width');  echo is_number($w)?$w.'px':$w; ?>; height:<?php $h = $this->params->get('logo_height'); echo is_numeric($h)?$h.'px':$h; ?>;" src="<?php  echo $this->params->get('logo_file')   ?>" alt="Logo" />
                                         </a>
                         </div>
 </div>
