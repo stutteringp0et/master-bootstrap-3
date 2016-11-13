@@ -437,17 +437,17 @@ body #overall {
     overflow: hidden;
 }
 /*MATERIAL DESIGN*/
-@import url(//fonts.gstatic.com/s/materialicons/v12/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
+@import url(//fonts.googleapis.com/css?Material+Icons:400);
 $materialicons: 'Material Icons';
-@font-face {
+/*@font-face {
   font-family: $materialicons;
   font-style: normal;
   font-weight: 400;
-/*  src: local('Material Icons'), local('MaterialIcons-Regular'), url(//fonts.gstatic.com/s/materialicons/v12/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');*/
-}
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(//fonts.gstatic.com/s/materialicons/v12/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
+}*/
 
 .material-icons {
-  font-family: 'Material Icons';
+  font-family: $materialicons;
   font-weight: normal;
   font-style: normal;
   font-size: 24px;
