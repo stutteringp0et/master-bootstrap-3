@@ -30,7 +30,10 @@ $doc->addStyleDeclaration('body {
 	<jdoc:include type="head" />
 </head>
 <body>
-<?php if($layout=='boxed') echo '<div class="layout-boxed">'; ?>
+<?php 
+	if(strlen($analytics)) echo $analytics;
+	if($layout=='boxed') echo '<div class="layout-boxed">'; 
+?>
 <div id="wrap">
 <!--Navigation-->
 <header id="header" class="header header--fixed hide-from-print" role="banner">
