@@ -57,3 +57,4 @@
 	if ($materialdesign == 1){
 	$doc->addStyleSheet($tpath . '/css/material.min.css');
 	}
+	$analytics = $this->params->get('analytics','');
