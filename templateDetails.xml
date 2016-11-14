@@ -105,6 +105,7 @@
 				<field name="analytics" type="textarea" default=""
 				       	label="Analytics"
 				       	description="Code to inject just after the open body tag"
+				       	filter="raw"
 				/>
 			</fieldset>
 			<!-- LOGO-->
